@@ -1,0 +1,39 @@
+@use "../styles/tokens" as t
+
+html
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  background: t.$ink
+  color: t.$ink
+  font-family: var(--font-body), Helvetica, sans-serif
+  -webkit-font-smoothing: antialiased
+  overflow-x: hidden
+
+*
+  box-sizing: border-box
+
+a
+  color: inherit
+  text-decoration: none
+
+  &:hover
+    color: inherit
+    opacity: 0.85
+
+::selection
+  background: t.$ink
+  color: t.$yellow
+
+@media (prefers-reduced-motion: reduce)
+  html
+    scroll-behavior: auto
+
+  *,
+  *::before,
+  *::after
+    animation-duration: 0.01ms !important
+    animation-iteration-count: 1 !important
+    transition-duration: 0.01ms !important
+    scroll-behavior: auto !important

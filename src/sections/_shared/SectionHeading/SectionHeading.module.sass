@@ -1,0 +1,50 @@
+@use "../../../styles/tokens" as t
+
+.head
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-end
+  justify-content: space-between
+  gap: 16px
+  padding-bottom: 22px
+
+.kicker
+  @include t.mono
+  font-size: 12px
+  letter-spacing: 0.08em
+
+.title,
+.compact
+  margin: 10px 0 0
+  @include t.display
+  font-weight: 800
+  line-height: 0.95
+  letter-spacing: -0.02em
+  text-transform: uppercase
+
+.title
+  font-size: clamp(34px, 6vw, 88px)
+
+.compact
+  font-size: clamp(30px, 4.6vw, 64px)
+
+.aside
+  @include t.mono
+  font-size: 12px
+  letter-spacing: 0.06em
+
+.right
+  max-width: 34ch
+  text-align: right
+
+.onInk
+  border-bottom: 2px solid t.$yellow
+
+  .kicker
+    color: t.$yellow
+
+  .aside
+    color: t.$muted-2
+
+.onYellow
+  border-bottom: 2px solid t.$ink

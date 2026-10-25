@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RECURSIA — studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0e0e0f; color: #0e0e0f; font-family: "Geist", Helvetica, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: inherit; opacity: 0.85; }
+  ::selection { background: #0e0e0f; color: #ffd400; }
+  @keyframes slide-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: none; } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+  @keyframes bob { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-10px) rotate(4deg); } }
+  @keyframes shrink-in { from { transform: scale(1.35); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+</style>
+</helmet>
+
+<div style="background: #0e0e0f;">
+
+  <header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px clamp(16px, 3.5vw, 40px); background: #ffd400; border-bottom: 2px solid #0e0e0f;">
+    <a href="#top" style="display: flex; align-items: center; gap: 10px;">
+      <svg viewBox="0 0 100 100" width="34" height="34" style="display: block; animation: bob 4s ease-in-out infinite;"><path d="M40 34L46 14L58 26Q65 24 72 26L84 14L90 34Q94 52 82 62Q65 70 48 62Q36 52 40 34Z" fill="#0e0e0f"></path><path d="M8 64L12 50L21 58Q26 57 31 58L40 50L44 64Q47 77 38 84Q26 90 14 84Q5 77 8 64Z" fill="#0e0e0f"></path><circle cx="60" cy="42" r="4.5" fill="#ffd400"></circle><circle cx="76" cy="42" r="4.5" fill="#ffd400"></circle><circle cx="19" cy="70" r="4" fill="#ffd400"></circle><circle cx="33" cy="70" r="4" fill="#ffd400"></circle></svg>
+      <span style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.02em;">RECURSIA</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: clamp(10px, 2vw, 26px); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;">
+      <a href="#work" style="padding: 4px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #0e0e0f; opacity: 1;">Work</a>
+      <a href="#ventures" style="padding: 4px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #0e0e0f; opacity: 1;">Ventures</a>
+      <a href="#play" style="padding: 4px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #0e0e0f; opacity: 1;">Playground</a>
+      <a href="#services" style="padding: 4px 0; border-bottom: 2px solid transparent;" style-hover="border-bottom: 2px solid #0e0e0f; opacity: 1;">Services</a>
+      <a href="https://t.me/Degster_oz" target="_blank" rel="noreferrer" style="padding: 9px 16px; background: #0e0e0f; color: #ffd400; border-radius: 999px; transition: transform .2s;" style-hover="transform: rotate(-3deg) scale(1.05); opacity: 1; color: #ffd400;">Start a project</a>
+    </nav>
+  </header>
+
+  <section id="top" style="background: #ffd400; padding: clamp(28px, 5vw, 64px) clamp(16px, 3.5vw, 40px) clamp(32px, 5vw, 60px); border-bottom: 2px solid #0e0e0f;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;">
+        <span>recursia(recursia(recursia(…)))</span>
+        <span>Independent digital studio</span>
+      </div>
+
+      <svg ref="{{ heroRef }}" onMouseMove="{{ heroMove }}" onMouseLeave="{{ heroLeave }}" onClick="{{ heroClick }}" viewBox="0 0 1600 300" width="100%" style="display: block; margin-top: clamp(14px, 2.5vw, 30px); overflow: visible; cursor: crosshair; animation: shrink-in 1.1s cubic-bezier(.16,1,.3,1) both;" role="img" aria-label="RECURSIA">
+        <defs>
+          <pattern id="rpat2" width="210" height="56" patternUnits="userSpaceOnUse">
+            <rect width="210" height="56" fill="#0e0e0f"></rect>
+            <text x="4" y="23" font-family="Unbounded, sans-serif" font-weight="800" font-size="21" fill="#ffd400">RECURSIA</text>
+            <text x="-101" y="51" font-family="Unbounded, sans-serif" font-weight="800" font-size="21" fill="#ffd400">RECURSIA</text>
+            <text x="109" y="51" font-family="Unbounded, sans-serif" font-weight="800" font-size="21" fill="#ffd400">RECURSIA</text>
+            <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="-210 0" dur="6s" repeatCount="indefinite"></animateTransform>
+          </pattern>
+          <mask id="lensMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="2000" height="700">
+            <g data-lens="pos" style="transform: translate(-999px, -999px);">
+              <g data-lens="scale" style="transform: scale(0); transition: transform .45s cubic-bezier(.16,1,.3,1);">
+                <circle r="120" fill="#fff"></circle>
+                <circle r="20" fill="none" stroke="#fff" stroke-width="14">
+                  <animate attributeName="r" values="120;230" dur="1.6s" repeatCount="indefinite"></animate>
+                  <animate attributeName="stroke-opacity" values="1;0" dur="1.6s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle r="20" fill="none" stroke="#fff" stroke-width="8">
+                  <animate attributeName="r" values="120;230" dur="1.6s" begin="0.8s" repeatCount="indefinite"></animate>
+                  <animate attributeName="stroke-opacity" values="1;0" dur="1.6s" begin="0.8s" repeatCount="indefinite"></animate>
+                </circle>
+              </g>
+            </g>
+            <g data-lens="splashes"></g>
+          </mask>
+          <pattern id="rpat" width="124" height="34" patternUnits="userSpaceOnUse">
+            <rect width="124" height="34" fill="#ffd400"></rect>
+            <text x="2" y="14" font-family="Unbounded, sans-serif" font-weight="800" font-size="12.5" fill="#0e0e0f">RECURSIA</text>
+            <text x="-60" y="31" font-family="Unbounded, sans-serif" font-weight="800" font-size="12.5" fill="#0e0e0f">RECURSIA</text>
+            <text x="64" y="31" font-family="Unbounded, sans-serif" font-weight="800" font-size="12.5" fill="#0e0e0f">RECURSIA</text>
+            <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="124 0" dur="{{ patternDur }}" repeatCount="indefinite"></animateTransform>
+          </pattern>
+        </defs>
+        <filter id="outline" x="-5%" y="-20%" width="110%" height="140%">
+          <feMorphology operator="dilate" radius="2.5"></feMorphology>
+        </filter>
+        <text x="800" y="268" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="900" font-size="292" textLength="1590" lengthAdjust="spacingAndGlyphs" fill="#0e0e0f" filter="url(#outline)">RECURSIA</text>
+        <text x="800" y="268" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="900" font-size="292" textLength="1590" lengthAdjust="spacingAndGlyphs" fill="url(#rpat)">RECURSIA</text>
+        <text x="800" y="268" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="900" font-size="292" textLength="1590" lengthAdjust="spacingAndGlyphs" fill="url(#rpat2)" mask="url(#lensMask)" style="pointer-events: none;">RECURSIA</text>
+      </svg>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(20px, 3vw, 48px); align-items: end; margin-top: clamp(22px, 3.5vw, 48px);">
+        <p style="margin: 0; max-width: 30ch; font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; animation: rise .8s cubic-bezier(.16,1,.3,1) .25s both;">
+          Websites, Telegram mini apps and tools for streamers. Built layer by layer.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start; animation: rise .8s cubic-bezier(.16,1,.3,1) .4s both;">
+          <p style="margin: 0; max-width: 44ch; font-size: 17px; line-height: 1.5;">A small studio that designs and ships the whole thing: interface, backend, deployment. Event sites, bots, products of our own.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="https://t.me/Degster_oz" target="_blank" rel="noreferrer" style="padding: 14px 24px; background: #0e0e0f; color: #ffd400; border-radius: 999px; font-weight: 600; font-size: 15px; transition: transform .2s;" style-hover="transform: translateY(-3px); opacity: 1; color: #ffd400;">Write on Telegram ↗</a>
+            <a href="#work" style="padding: 14px 24px; border: 2px solid #0e0e0f; border-radius: 999px; font-weight: 600; font-size: 15px; transition: all .2s;" style-hover="background: #0e0e0f; color: #ffd400; opacity: 1;">See the work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="overflow: hidden; background: #0e0e0f; color: #ffd400; padding: 16px 0; border-bottom: 2px solid #0e0e0f;">
+    <div style="display: flex; width: max-content; gap: 40px; animation: slide-l 26s linear infinite; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(18px, 2vw, 26px); text-transform: uppercase; letter-spacing: 0.01em;">
+      <span style="display: flex; gap: 40px; align-items: center;"><span>Websites</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Telegram mini apps</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Web apps</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Browser extensions</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Streamer tools</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span></span>
+      <span style="display: flex; gap: 40px; align-items: center;"><span>Websites</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Telegram mini apps</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Web apps</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Browser extensions</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span><span>Streamer tools</span><span style="display: inline-block; animation: spin 5s linear infinite;">✺</span></span>
+    </div>
+  </div>
+
+  <section id="work" style="background: #0e0e0f; color: #f4f1e8; padding: clamp(48px, 7vw, 104px) clamp(16px, 3.5vw, 40px);">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 2px solid #ffd400;">
+        <div>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #ffd400;">↳ DEPTH 01</div>
+          <h2 style="margin: 10px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase;">Selected work</h2>
+        </div>
+        <span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #a6a39a; letter-spacing: 0.06em;">LIVE SITES, NOT SCREENSHOTS</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(32px, 5vw, 64px) 0; border-bottom: 1px solid #2a2a2c; animation: rise .8s cubic-bezier(.16,1,.3,1) both; animation-timeline: view(); animation-range: entry 0% entry 50%;">
+        <a href="https://www.tedxsavskivenac.com/" target="_blank" rel="noreferrer" style="display: block; border: 2px solid #ffd400; border-radius: 10px; overflow: hidden; background: #161617; transition: transform .35s cubic-bezier(.16,1,.3,1);" style-hover="transform: rotate(-1.2deg) scale(1.015); opacity: 1;">
+          <div style="display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #ffd400; color: #0e0e0f; font-family: 'Geist Mono', monospace; font-size: 11px;">
+            <span style="width: 9px; height: 9px; border-radius: 999px; background: #0e0e0f;"></span><span style="width: 9px; height: 9px; border-radius: 999px; border: 1.5px solid #0e0e0f;"></span><span style="width: 9px; height: 9px; border-radius: 999px; border: 1.5px solid #0e0e0f;"></span>
+            <span style="margin-left: 8px;">tedxsavskivenac.com</span>
+          </div>
+          <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #000;">
+            <sc-if value="{{ live }}" hint-placeholder-val="{{ true }}">
+              <iframe src="https://www.tedxsavskivenac.com/" loading="lazy" title="TEDxSavskiVenac" style="position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; transform: scale(0.4); transform-origin: 0 0; pointer-events: none;"></iframe>
+            </sc-if>
+          </div>
+        </a>
+        <div>
+          <div style="display: flex; align-items: baseline; gap: 14px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #ffd400; letter-spacing: 0.06em;"><span>01</span><span>EVENT WEBSITE · 2026</span></div>
+          <h3 style="margin: 12px 0 16px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(28px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.02em;">TEDx Savski Venac</h3>
+          <p style="margin: 0 0 22px; max-width: 46ch; font-size: 17px; line-height: 1.55; color: #cfccc2; text-wrap: pretty;">Website for an independent TEDx event in Belgrade: “Small Shifts, Big Impact”, 10 October 2026 at Startit Center. Speakers, programme and tickets in one fast page.</p>
+          <a href="https://www.tedxsavskivenac.com/" target="_blank" rel="noreferrer" style="display: inline-flex; padding: 11px 20px; border: 2px solid #ffd400; color: #ffd400; border-radius: 999px; font-weight: 600; font-size: 14px; transition: all .2s;" style-hover="background: #ffd400; color: #0e0e0f; opacity: 1;">Visit site ↗</a>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(32px, 5vw, 64px) 0; border-bottom: 1px solid #2a2a2c; animation: rise .8s cubic-bezier(.16,1,.3,1) both; animation-timeline: view(); animation-range: entry 0% entry 50%;">
+        <div style="order: 2;">
+          <a href="https://roast.recursia.online/" target="_blank" rel="noreferrer" style="display: block; border: 2px solid #ffd400; border-radius: 10px; overflow: hidden; background: #161617; transition: transform .35s cubic-bezier(.16,1,.3,1);" style-hover="transform: rotate(1.2deg) scale(1.015); opacity: 1;">
+            <div style="display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #ffd400; color: #0e0e0f; font-family: 'Geist Mono', monospace; font-size: 11px;">
+              <span style="width: 9px; height: 9px; border-radius: 999px; background: #0e0e0f;"></span><span style="width: 9px; height: 9px; border-radius: 999px; border: 1.5px solid #0e0e0f;"></span><span style="width: 9px; height: 9px; border-radius: 999px; border: 1.5px solid #0e0e0f;"></span>
+              <span style="margin-left: 8px;">roast.recursia.online</span>
+            </div>
+            <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0b0a11;">
+              <sc-if value="{{ live }}" hint-placeholder-val="{{ true }}">
+                <iframe src="https://roast.recursia.online/" loading="lazy" title="RoastBot" style="position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; transform: scale(0.4); transform-origin: 0 0; pointer-events: none;"></iframe>
+              </sc-if>
+            </div>
+          </a>
+        </div>
+        <div>
+          <div style="display: flex; align-items: baseline; gap: 14px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #ffd400; letter-spacing: 0.06em;"><span>02</span><span>TWITCH BOT · AI VOICE</span></div>
+          <h3 style="margin: 12px 0 16px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(28px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.02em;">RoastBot</h3>
+          <p style="margin: 0 0 22px; max-width: 46ch; font-size: 17px; line-height: 1.55; color: #cfccc2; text-wrap: pretty;">Voice AI roast for Twitch. A yandere and a tsundere roast the chat, raiders, donors and the streamer, out loud, live on air. Landing page, bot and voice pipeline.</p>
+          <a href="https://roast.recursia.online/" target="_blank" rel="noreferrer" style="display: inline-flex; padding: 11px 20px; border: 2px solid #ffd400; color: #ffd400; border-radius: 999px; font-weight: 600; font-size: 14px; transition: all .2s;" style-hover="background: #ffd400; color: #0e0e0f; opacity: 1;">Visit site ↗</a>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(32px, 5vw, 64px) 0 0; animation: rise .8s cubic-bezier(.16,1,.3,1) both; animation-timeline: view(); animation-range: entry 0% entry 50%;">
+        <div style="display: flex; justify-content: center; padding: clamp(20px, 3vw, 40px); border: 2px dashed #3a3a3c; border-radius: 10px; background: repeating-linear-gradient(135deg, #141415 0 10px, #0e0e0f 10px 20px);">
+          <div style="width: min(100%, 340px); border: 3px solid #ffd400; border-radius: 38px; background: #0f141d; padding: 10px; box-shadow: 12px 12px 0 #ffd400; transition: transform .35s cubic-bezier(.16,1,.3,1);" style-hover="transform: rotate(-2deg);">
+            <div style="border-radius: 28px; overflow: hidden; background: #0f141d; color: #f2f4f8; font-family: 'Geist', sans-serif; padding: 16px 14px 18px; min-height: 560px; display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 9px;">
+                  <span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg, #5b8cff, #7b6cf6); font-size: 13px; color: #fff;">✓</span>
+                  <span style="font-weight: 600; font-size: 14px;">IT Connect Hub</span>
+                </div>
+                <span style="display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: linear-gradient(135deg, #5b8cff, #7b6cf6); font-size: 11px; font-weight: 600;">VL</span>
+              </div>
+              <div style="font-weight: 700; font-size: 24px; letter-spacing: -0.01em;">Мероприятия</div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                <span style="font-size: 12px; color: #8b93a3;">{{ dateLabel }}</span>
+                <span style="padding: 7px 11px; border-radius: 10px; background: #1b2230; font-size: 12px; font-weight: 600;">Календарь</span>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px;">
+                <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+                  <div onClick="{{ d.pick }}" style="{{ d.style }}">
+                    <span style="font-size: 9px; opacity: 0.75;">{{ d.dow }}</span>
+                    <span style="font-size: 16px; font-weight: 700;">{{ d.num }}</span>
+                    <span style="{{ d.dot }}"></span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span style="padding: 7px 12px; border-radius: 999px; background: #5b8cff; font-size: 12px; font-weight: 600;">Все мероприятия</span>
+                <span style="padding: 7px 12px; border-radius: 999px; background: #1b2230; color: #a3abba; font-size: 12px; font-weight: 600;">Доступна регистрация</span>
+              </div>
+              <sc-if value="{{ hasEvent }}" hint-placeholder-val="{{ true }}">
+                <div style="border-radius: 16px; background: #171d29; padding: 14px; display: flex; flex-direction: column; gap: 10px;">
+                  <div style="display: flex; justify-content: space-between; gap: 8px; font-size: 11px; color: #8b93a3;"><span>{{ ev.time }}</span><span style="color: #7fe0a6;">{{ ev.seats }}</span></div>
+                  <div style="font-weight: 700; font-size: 16px; line-height: 1.25;">{{ ev.title }}</div>
+                  <div style="font-size: 12px; color: #a3abba;">{{ ev.place }}</div>
+                  <div onClick="{{ toggleReg }}" style="{{ regStyle }}">{{ regLabel }}</div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ noEvent }}" hint-placeholder-val="{{ false }}">
+                <div style="border-radius: 16px; background: #171d29; padding: 18px 14px; text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center;">
+                  <div style="font-weight: 700; font-size: 14px;">На эту дату мероприятий нет</div>
+                  <div style="font-size: 12px; line-height: 1.45; color: #8b93a3;">Выберите другой день в ленте — дни с событиями отмечены точкой.</div>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; align-items: baseline; gap: 14px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #ffd400; letter-spacing: 0.06em;"><span>03</span><span>TELEGRAM MINI APP</span></div>
+          <h3 style="margin: 12px 0 16px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(28px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.02em;">IT Connect Hub</h3>
+          <p style="margin: 0 0 22px; max-width: 46ch; font-size: 17px; line-height: 1.55; color: #cfccc2; text-wrap: pretty;">Telegram mini app for the IT Connect community. Organisers announce an event, people register in two taps without leaving Telegram.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="https://t.me/ITConnectEventsBot?startapp" target="_blank" rel="noreferrer" style="display: inline-flex; padding: 11px 20px; background: #ffd400; border: 2px solid #ffd400; color: #0e0e0f; border-radius: 999px; font-weight: 600; font-size: 14px; transition: transform .2s;" style-hover="transform: translateY(-3px); opacity: 1;">Open in Telegram ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ventures" style="background: #ffd400; padding: clamp(48px, 7vw, 104px) clamp(16px, 3.5vw, 40px); border-top: 2px solid #0e0e0f; border-bottom: 2px solid #0e0e0f;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 2px solid #0e0e0f;">
+        <div>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em;">↳↳ DEPTH 02</div>
+          <h2 style="margin: 10px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase;">Ventures</h2>
+        </div>
+        <span style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; max-width: 34ch; text-align: right;">PRODUCTS WE BUILD FOR OURSELVES</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(28px, 4vw, 60px); padding-top: clamp(32px, 5vw, 60px); align-items: start;">
+        <div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
+            <span style="padding: 6px 12px; border-radius: 999px; background: #0e0e0f; color: #ffd400; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em;">CLOSED ALPHA</span>
+            <span style="padding: 6px 12px; border-radius: 999px; border: 2px solid #0e0e0f; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em;">RAISING A ROUND</span>
+          </div>
+          <h3 style="margin: 0 0 18px; font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(54px, 9vw, 150px); line-height: 0.86; letter-spacing: -0.04em;">Purrse</h3>
+          <p style="margin: 0 0 16px; max-width: 30ch; font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: clamp(19px, 1.8vw, 26px); line-height: 1.2;">Home bookkeeping, run by a cat.</p>
+          <p style="margin: 0 0 26px; max-width: 48ch; font-size: 17px; line-height: 1.55; text-wrap: pretty;">Scan the QR code on a Serbian fiscal receipt and Purrse sorts every item into categories, tracks price history and shows your personal inflation. Limits, Telegram summaries and CashCat, who has opinions about your spending.</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid #0e0e0f; border-bottom: 2px solid #0e0e0f; margin-bottom: 26px;">
+            <div style="padding: 14px 10px 14px 0; border-right: 2px solid #0e0e0f;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 30px);">5 sec</div><div style="font-size: 13px; margin-top: 4px;">per receipt</div></div>
+            <div style="padding: 14px 10px; border-right: 2px solid #0e0e0f;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 30px);">RSD · EUR</div><div style="font-size: 13px; margin-top: 4px;">currencies</div></div>
+            <div style="padding: 14px 0 14px 10px;"><div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 30px);">RU EN SR</div><div style="font-size: 13px; margin-top: 4px;">languages</div></div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="https://purrse.online/" target="_blank" rel="noreferrer" style="padding: 14px 24px; background: #0e0e0f; color: #ffd400; border-radius: 999px; font-weight: 600; font-size: 15px; transition: transform .2s;" style-hover="transform: translateY(-3px); opacity: 1; color: #ffd400;">purrse.online ↗</a>
+            <a href="https://t.me/Degster_oz" target="_blank" rel="noreferrer" style="padding: 14px 24px; border: 2px solid #0e0e0f; border-radius: 999px; font-weight: 600; font-size: 15px; transition: all .2s;" style-hover="background: #0e0e0f; color: #ffd400; opacity: 1;">Investor? Let's talk</a>
+          </div>
+        </div>
+        <a href="https://purrse.online/" target="_blank" rel="noreferrer" style="display: block; border: 2px solid #0e0e0f; border-radius: 10px; overflow: hidden; background: #faf7f5; box-shadow: 10px 10px 0 #0e0e0f; transition: all .3s cubic-bezier(.16,1,.3,1);" style-hover="transform: translate(-4px, -4px); box-shadow: 16px 16px 0 #0e0e0f; opacity: 1;">
+          <div style="display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #0e0e0f; color: #ffd400; font-family: 'Geist Mono', monospace; font-size: 11px;">
+            <span style="width: 9px; height: 9px; border-radius: 999px; background: #ffd400;"></span><span style="width: 9px; height: 9px; border-radius: 999px; border: 1.5px solid #ffd400;"></span><span style="width: 9px; height: 9px; border-radius: 999px; border: 1.5px solid #ffd400;"></span>
+            <span style="margin-left: 8px;">purrse.online</span>
+          </div>
+          <img src="assets/purrse.png" alt="Purrse landing page" style="display: block; width: 100%; height: auto;">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #0e0e0f; color: #f4f1e8; padding: clamp(48px, 7vw, 100px) clamp(16px, 3.5vw, 40px);">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="padding-bottom: 22px; border-bottom: 2px solid #ffd400;">
+        <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #ffd400;">↳↳↳ DEPTH 03</div>
+        <h2 style="margin: 10px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(30px, 4.6vw, 64px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase;">Also shipped</h2>
+      </div>
+      <sc-for list="{{ more }}" as="m" hint-placeholder-count="3">
+        <a href="{{ m.url }}" target="_blank" rel="noreferrer" style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: clamp(18px, 2.4vw, 30px) 0; border-bottom: 1px solid #2a2a2c; transition: all .3s;" style-hover="padding-left: 14px; background: #ffd400; color: #0e0e0f; opacity: 1;">
+          <span style="font-family: 'Geist Mono', monospace; font-size: 12px; opacity: 0.6;">{{ m.num }}</span>
+          <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; min-width: 0;">
+            <span style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(22px, 2.8vw, 38px); letter-spacing: -0.02em;">{{ m.name }}</span>
+            <span style="font-size: 16px; line-height: 1.45; max-width: 60ch; opacity: 0.8;">{{ m.desc }}</span>
+          </div>
+          <span style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; padding-right: 10px;">{{ m.kind }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="play" style="background: #ffd400; padding: clamp(48px, 7vw, 104px) clamp(16px, 3.5vw, 40px); border-top: 2px solid #0e0e0f; border-bottom: 2px solid #0e0e0f;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 2px solid #0e0e0f;">
+        <div>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em;">↳↳↳↳ DEPTH 04</div>
+          <h2 style="margin: 10px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase;">Playground</h2>
+        </div>
+        <span style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em;">MADE FOR FUN · THEY WORK, GO CLICK</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: clamp(20px, 3vw, 40px); padding-top: clamp(28px, 4vw, 52px);">
+        <div style="border: 2px solid #0e0e0f; border-radius: 10px; overflow: hidden; background: #0e0e0f; transform: rotate(-1deg); transition: transform .35s cubic-bezier(.16,1,.3,1);" style-hover="transform: rotate(0deg) scale(1.01);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px; color: #ffd400;">
+            <span style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 18px;">Release your inner monster</span>
+            <a href="https://release-your-inner-monster.vercel.app/" target="_blank" rel="noreferrer" style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #ffd400;">open ↗</a>
+          </div>
+          <div style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #fff;">
+            <sc-if value="{{ live }}" hint-placeholder-val="{{ true }}">
+              <iframe src="https://release-your-inner-monster.vercel.app/" loading="lazy" title="White Monster" style="position: absolute; top: 0; left: 0; width: 166.667%; height: 166.667%; border: 0; transform: scale(0.6); transform-origin: 0 0;"></iframe>
+            </sc-if>
+          </div>
+        </div>
+        <div style="border: 2px solid #0e0e0f; border-radius: 10px; overflow: hidden; background: #0e0e0f; transform: rotate(1deg); transition: transform .35s cubic-bezier(.16,1,.3,1);" style-hover="transform: rotate(0deg) scale(1.01);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px; color: #ffd400;">
+            <span style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 18px;">Sad Music</span>
+            <a href="https://sad-music.vercel.app/" target="_blank" rel="noreferrer" style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #ffd400;">open ↗</a>
+          </div>
+          <div style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #111;">
+            <sc-if value="{{ live }}" hint-placeholder-val="{{ true }}">
+              <iframe src="https://sad-music.vercel.app/" loading="lazy" title="Sad Music" allow="autoplay" style="position: absolute; top: 0; left: 0; width: 166.667%; height: 166.667%; border: 0; transform: scale(0.6); transform-origin: 0 0;"></iframe>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: 14px; font-size: 15px; line-height: 1.5;">
+        <p style="margin: 0; max-width: 46ch;">A fan site for Monster Energy Ultra White, the drink. Unlock it, release it.</p>
+        <p style="margin: 0; max-width: 46ch;">Tap the pads, stack the layers, end up with a melancholic track of your own.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background: #0e0e0f; color: #f4f1e8; padding: clamp(48px, 7vw, 104px) clamp(16px, 3.5vw, 40px);">
+    <div style="max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(28px, 4vw, 64px);">
+      <div>
+        <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #ffd400;">↳↳↳↳↳ DEPTH 05</div>
+        <h2 style="margin: 10px 0 20px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase;">What we make</h2>
+        <p style="margin: 0; max-width: 38ch; font-size: 17px; line-height: 1.55; color: #cfccc2;">No packages and no price list. Tell us what you need, we come back with a plan, a timeline and a number.</p>
+      </div>
+      <div style="border-top: 2px solid #ffd400;">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+          <div style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 20px 0; border-bottom: 1px solid #2a2a2c; transition: all .3s;" style-hover="padding-left: 10px; color: #ffd400;">
+            <span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #ffd400; padding-top: 8px;">{{ s.num }}</span>
+            <div>
+              <div style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -0.01em;">{{ s.name }}</div>
+              <div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #a6a39a;">{{ s.desc }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #ffd400; padding: clamp(48px, 7vw, 100px) clamp(16px, 3.5vw, 40px); border-top: 2px solid #0e0e0f; border-bottom: 2px solid #0e0e0f;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="padding-bottom: 22px; border-bottom: 2px solid #0e0e0f;">
+        <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em;">↳↳↳↳↳↳ DEPTH 06</div>
+        <h2 style="margin: 10px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: clamp(34px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase;">People</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(16px, 2.5vw, 28px); padding-top: clamp(28px, 4vw, 48px);">
+        <div style="border: 2px solid #0e0e0f; border-radius: 10px; background: #0e0e0f; color: #f4f1e8; padding: 22px; display: flex; flex-direction: column; gap: 22px; min-height: 300px; justify-content: space-between;">
+          <svg viewBox="0 0 100 100" width="88" height="88" style="display: block;"><path d="M40 34L46 14L58 26Q65 24 72 26L84 14L90 34Q94 52 82 62Q65 70 48 62Q36 52 40 34Z" fill="#ffd400"></path><path d="M8 64L12 50L21 58Q26 57 31 58L40 50L44 64Q47 77 38 84Q26 90 14 84Q5 77 8 64Z" fill="#ffd400"></path><circle cx="60" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="76" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="19" cy="70" r="4" fill="#0e0e0f"></circle><circle cx="33" cy="70" r="4" fill="#0e0e0f"></circle></svg>
+          <div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #ffd400;">FOUNDER</div>
+            <div style="margin-top: 8px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 26px;">Vitaly</div>
+            <div style="margin-top: 6px; font-size: 15px; color: #a6a39a;">Frontend, product, everything in between.</div>
+            <a href="https://t.me/Degster_oz" target="_blank" rel="noreferrer" style="display: inline-block; margin-top: 14px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #ffd400;">@Degster_oz ↗</a>
+          </div>
+        </div>
+        <div style="border: 2px dashed #0e0e0f; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 300px;">
+          <div style="width: 88px; height: 88px; border: 2px dashed #0e0e0f; border-radius: 999px; display: grid; place-items: center; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 30px; animation: spin 14s linear infinite;">?</div>
+          <div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em;">NEXT SEAT</div>
+            <div style="margin-top: 8px; font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 26px;">Soon, more of us</div>
+            <div style="margin-top: 6px; font-size: 15px; max-width: 32ch;">The studio is growing. If you build things and like how this page looks, say hi.</div>
+          </div>
+        </div>
+        <div style="border: 2px dashed #0e0e0f; border-radius: 10px; padding: 22px; display: flex; align-items: center; justify-content: center; min-height: 300px; opacity: 0.55;">
+          <div style="border: 2px dashed #0e0e0f; border-radius: 8px; width: 70%; height: 70%; min-height: 180px; display: flex; align-items: center; justify-content: center;">
+            <div style="border: 2px dashed #0e0e0f; border-radius: 6px; width: 60%; height: 60%; min-height: 100px; display: flex; align-items: center; justify-content: center;">
+              <div style="border: 2px dashed #0e0e0f; border-radius: 4px; width: 50%; height: 50%; min-height: 50px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background: #0e0e0f; color: #ffd400; padding: clamp(56px, 9vw, 140px) clamp(16px, 3.5vw, 40px) 30px; overflow: hidden;">
+    <div style="max-width: 1560px; margin: 0 auto;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em;">return recursia(you);</div>
+      <a href="https://t.me/Degster_oz" target="_blank" rel="noreferrer" style="display: block; margin: 18px 0 0; font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: clamp(48px, 11vw, 190px); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; color: #ffd400; transition: letter-spacing .4s cubic-bezier(.16,1,.3,1);" style-hover="letter-spacing: -0.01em; opacity: 1; color: #ffd400;">Let's build<br>the next layer ↗</a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-top: clamp(32px, 5vw, 60px);">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a href="https://t.me/Degster_oz" target="_blank" rel="noreferrer" style="padding: 15px 26px; background: #ffd400; color: #0e0e0f; border-radius: 999px; font-weight: 600; font-size: 16px; transition: transform .2s;" style-hover="transform: rotate(-2deg) scale(1.04); opacity: 1;">Telegram @Degster_oz</a>
+        </div>
+        <div style="display: flex; align-items: flex-end; gap: 10px;">
+          <svg viewBox="0 0 100 100" width="96" height="96"><path d="M40 34L46 14L58 26Q65 24 72 26L84 14L90 34Q94 52 82 62Q65 70 48 62Q36 52 40 34Z" fill="#ffd400"></path><path d="M8 64L12 50L21 58Q26 57 31 58L40 50L44 64Q47 77 38 84Q26 90 14 84Q5 77 8 64Z" fill="#ffd400"></path><circle cx="60" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="76" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="19" cy="70" r="4" fill="#0e0e0f"></circle><circle cx="33" cy="70" r="4" fill="#0e0e0f"></circle></svg>
+          <svg viewBox="0 0 100 100" width="58" height="58"><path d="M40 34L46 14L58 26Q65 24 72 26L84 14L90 34Q94 52 82 62Q65 70 48 62Q36 52 40 34Z" fill="#ffd400"></path><path d="M8 64L12 50L21 58Q26 57 31 58L40 50L44 64Q47 77 38 84Q26 90 14 84Q5 77 8 64Z" fill="#ffd400"></path><circle cx="60" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="76" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="19" cy="70" r="4" fill="#0e0e0f"></circle><circle cx="33" cy="70" r="4" fill="#0e0e0f"></circle></svg>
+          <svg viewBox="0 0 100 100" width="35" height="35"><path d="M40 34L46 14L58 26Q65 24 72 26L84 14L90 34Q94 52 82 62Q65 70 48 62Q36 52 40 34Z" fill="#ffd400"></path><path d="M8 64L12 50L21 58Q26 57 31 58L40 50L44 64Q47 77 38 84Q26 90 14 84Q5 77 8 64Z" fill="#ffd400"></path><circle cx="60" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="76" cy="42" r="4.5" fill="#0e0e0f"></circle><circle cx="19" cy="70" r="4" fill="#0e0e0f"></circle><circle cx="33" cy="70" r="4" fill="#0e0e0f"></circle></svg>
+          <svg viewBox="0 0 100 100" width="21" height="21"><path d="M40 34L46 14L58 26Q65 24 72 26L84 14L90 34Q94 52 82 62Q65 70 48 62Q36 52 40 34Z" fill="#ffd400"></path><path d="M8 64L12 50L21 58Q26 57 31 58L40 50L44 64Q47 77 38 84Q26 90 14 84Q5 77 8 64Z" fill="#ffd400"></path></svg>
+          <span style="font-family: 'Geist Mono', monospace; font-size: 14px; animation: blink 1.2s steps(1) infinite;">…</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: clamp(44px, 7vw, 90px); padding-top: 18px; border-top: 1px solid #2a2a2c; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #a6a39a;">
+        <span>RECURSIA.ONLINE</span>
+        <span>© {{ year }} RECURSIA STUDIO</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;livePreviews&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;patternSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:8,&quot;min&quot;:2,&quot;max&quot;:30,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { day: 0, reg: {} };
+  appVals() {
+    const dows = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+    const full = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+    const events = {
+      0: { time: "19:00 · 2 ч", seats: "Регистрация открыта", title: "IT Connect Meetup: фронтенд без боли", place: "Startit Center, Belgrade" },
+      4: { time: "18:30 · 3 ч", seats: "Осталось 12 мест", title: "Networking night: DevOps & Coffee", place: "Coworking Kvart, Novi Sad" }
+    };
+    const sel = this.state.day;
+    const days = dows.map((dow, i) => {
+      const on = i === sel;
+      return {
+        dow, num: 25 + i,
+        pick: () => this.setState({ day: i }),
+        style: "display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 7px 0 6px; border-radius: 11px; cursor: pointer; transition: background .2s; " + (on ? "background: linear-gradient(160deg, #5b8cff, #7b6cf6); color: #fff;" : "background: #1b2230; color: #e3e6ec;"),
+        dot: "width: 4px; height: 4px; border-radius: 999px; background: " + (events[i] ? (on ? "#fff" : "#5b8cff") : "transparent") + ";"
+      };
+    });
+    const ev = events[sel] || {};
+    const done = !!this.state.reg[sel];
+    return {
+      days, ev,
+      dateLabel: full[sel] + ", " + (25 + sel) + " Октября",
+      hasEvent: !!events[sel],
+      noEvent: !events[sel],
+      regLabel: done ? "Вы зарегистрированы ✓" : "Зарегистрироваться",
+      regStyle: "margin-top: 4px; padding: 11px; border-radius: 12px; text-align: center; font-weight: 600; font-size: 13px; cursor: pointer; transition: all .2s; " + (done ? "background: #1f3a2b; color: #7fe0a6;" : "background: linear-gradient(135deg, #5b8cff, #7b6cf6); color: #fff;"),
+      toggleReg: () => this.setState(s => ({ reg: { ...s.reg, [sel]: !s.reg[sel] } }))
+    };
+  }
+  // Hero lens: a second copy of the word (inverted pattern, bigger words) is revealed
+  // through an SVG mask that follows the cursor. Click spawns a one-shot ripple ring.
+  // DOM is updated directly (no setState) so it stays at 60fps.
+  heroRef = React.createRef();
+  toSvg(e) {
+    const svg = this.heroRef.current;
+    const p = svg.createSVGPoint();
+    p.x = e.clientX; p.y = e.clientY;
+    return p.matrixTransform(svg.getScreenCTM().inverse());
+  }
+  heroMove = e => {
+    const svg = this.heroRef.current; if (!svg) return;
+    const { x, y } = this.toSvg(e);
+    svg.querySelector('[data-lens="pos"]').style.transform = `translate(${x}px, ${y}px)`;
+    svg.querySelector('[data-lens="scale"]').style.transform = "scale(1)";
+  };
+  heroLeave = () => {
+    const svg = this.heroRef.current; if (!svg) return;
+    svg.querySelector('[data-lens="scale"]').style.transform = "scale(0)";
+  };
+  heroClick = e => {
+    const svg = this.heroRef.current; if (!svg) return;
+    const { x, y } = this.toSvg(e);
+    const NS = "http://www.w3.org/2000/svg";
+    const c = document.createElementNS(NS, "circle");
+    c.setAttribute("cx", x); c.setAttribute("cy", y);
+    c.setAttribute("fill", "none"); c.setAttribute("stroke", "#fff");
+    c.setAttribute("stroke-width", "36");
+    svg.querySelector('[data-lens="splashes"]').appendChild(c);
+    const t0 = performance.now();
+    const step = now => {
+      const k = Math.min(1, (now - t0) / 1100);
+      c.setAttribute("r", 40 + k * 900);
+      c.setAttribute("stroke-opacity", 1 - k);
+      k < 1 ? requestAnimationFrame(step) : c.remove();
+    };
+    requestAnimationFrame(step);
+  };
+  renderVals() {
+    const pad = i => String(i + 1).padStart(2, "0");
+    const more = [
+      { name: "Gilded", kind: "MARKETPLACE", url: "https://gilded-project.vercel.app/", desc: "Classifieds marketplace for Serbia: post an ad, find a buyer." },
+      { name: "Tzara Book", kind: "READER", url: "https://tzara-book.vercel.app/read/00-predystoriya", desc: "Reading site for an author's book, chapter by chapter." },
+      { name: "Now Playing → OBS", kind: "EXTENSION", url: "https://t.me/Degster_oz", desc: "Browser extension that sends the current Yandex Music track to OBS as a scrolling ticker." }
+    ].map((m, i) => ({ ...m, num: pad(i) }));
+    const services = [
+      { name: "Websites & landing pages", desc: "Event sites, product launches, studio and personal sites." },
+      { name: "Telegram mini apps", desc: "Registration, booking and community tools that live inside Telegram." },
+      { name: "Web applications", desc: "Dashboards, internal tools, products with accounts and data." },
+      { name: "Browser extensions", desc: "Small utilities that hook into the sites you already use." },
+      { name: "Tools for streamers", desc: "Overlays, bots and OBS integrations for Twitch and beyond." }
+    ].map((s, i) => ({ ...s, num: pad(i) }));
+    return {
+      ...this.appVals(),
+      heroRef: this.heroRef, heroMove: this.heroMove, heroLeave: this.heroLeave, heroClick: this.heroClick,
+      live: this.props.livePreviews ?? true,
+      patternDur: (this.props.patternSpeed ?? 8) + "s",
+      year: new Date().getFullYear(),
+      more,
+      services
+    };
+  }
+}
+</script>
+</body>
+</html>

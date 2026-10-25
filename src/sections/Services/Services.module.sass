@@ -1,0 +1,68 @@
+@use "../../styles/tokens" as t
+
+.services
+  background: t.$ink
+  color: t.$paper
+  padding: clamp(48px, 7vw, 104px) clamp(16px, 3.5vw, 40px)
+
+.wrap
+  @include t.wrap
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr))
+  gap: clamp(28px, 4vw, 64px)
+
+.kicker
+  @include t.mono
+  font-size: 12px
+  letter-spacing: 0.08em
+  color: t.$yellow
+
+.services
+  h2
+    margin: 10px 0 20px
+    @include t.display
+    font-weight: 800
+    font-size: clamp(34px, 6vw, 88px)
+    line-height: 0.95
+    letter-spacing: -0.02em
+    text-transform: uppercase
+
+  p
+    margin: 0
+    max-width: 38ch
+    font-size: 17px
+    line-height: 1.55
+    color: t.$muted
+
+.list
+  border-top: 2px solid t.$yellow
+
+.row
+  display: grid
+  grid-template-columns: 44px minmax(0, 1fr)
+  gap: 14px
+  padding: 20px 0
+  border-bottom: 1px solid t.$line
+  transition: all 0.3s
+
+  &:hover
+    padding-left: 10px
+    color: t.$yellow
+
+.num
+  @include t.mono
+  font-size: 12px
+  color: t.$yellow
+  padding-top: 8px
+
+.name
+  @include t.display
+  font-weight: 800
+  font-size: clamp(20px, 2.2vw, 30px)
+  letter-spacing: -0.01em
+
+.desc
+  margin-top: 6px
+  font-size: 15px
+  line-height: 1.5
+  color: t.$muted-2

@@ -1,0 +1,63 @@
+@use "../../styles/motion"
+@use "../../styles/tokens" as t
+
+.header
+  position: sticky
+  top: 0
+  z-index: 50
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-wrap: wrap
+  gap: 16px
+  padding: 12px clamp(16px, 3.5vw, 40px)
+  background: t.$yellow
+  border-bottom: 2px solid t.$ink
+
+.brand
+  display: flex
+  align-items: center
+  gap: 10px
+
+  &:hover
+    opacity: 1
+
+.mark
+  animation: bob 4s ease-in-out infinite
+
+.word
+  @include t.display
+  font-weight: 800
+  font-size: 16px
+  letter-spacing: 0.02em
+
+.nav
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: flex-end
+  gap: clamp(10px, 2vw, 26px)
+  @include t.mono
+  font-size: 12px
+  letter-spacing: 0.04em
+  text-transform: uppercase
+
+.link
+  padding: 4px 0
+  border-bottom: 2px solid transparent
+
+  &:hover
+    border-bottom-color: t.$ink
+    opacity: 1
+
+.cta
+  padding: 9px 16px
+  background: t.$ink
+  color: t.$yellow
+  border-radius: 999px
+  transition: transform 0.2s
+
+  &:hover
+    transform: rotate(-3deg) scale(1.05)
+    opacity: 1
+    color: t.$yellow

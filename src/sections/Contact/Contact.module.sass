@@ -1,0 +1,78 @@
+@use "../../styles/motion"
+@use "../../styles/tokens" as t
+
+.contact
+  background: t.$ink
+  color: t.$yellow
+  padding: clamp(56px, 9vw, 140px) clamp(16px, 3.5vw, 40px) 30px
+  overflow: hidden
+
+.wrap
+  @include t.wrap
+
+.kicker
+  @include t.mono
+  font-size: 12px
+  letter-spacing: 0.08em
+
+.headline
+  display: block
+  margin: 18px 0 0
+  @include t.display
+  font-weight: 900
+  font-size: clamp(48px, 11vw, 190px)
+  line-height: 0.88
+  letter-spacing: -0.04em
+  text-transform: uppercase
+  color: t.$yellow
+  transition: letter-spacing 0.4s t.$ease
+
+  &:hover
+    letter-spacing: -0.01em
+    opacity: 1
+    color: t.$yellow
+
+.row
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-between
+  gap: 24px
+  margin-top: clamp(32px, 5vw, 60px)
+
+.pill
+  padding: 15px 26px
+  background: t.$yellow
+  color: t.$ink
+  border-radius: 999px
+  font-weight: 600
+  font-size: 16px
+  transition: transform 0.2s
+
+  &:hover
+    transform: rotate(-2deg) scale(1.04)
+    opacity: 1
+    color: t.$ink
+
+.marks
+  display: flex
+  align-items: flex-end
+  gap: 10px
+
+.ellipsis
+  @include t.mono
+  font-size: 14px
+  animation: blink 1.2s steps(1) infinite
+
+.footer
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  gap: 12px
+  margin-top: clamp(44px, 7vw, 90px)
+  padding-top: 18px
+  border-top: 1px solid t.$line
+  @include t.mono
+  font-size: 11px
+  letter-spacing: 0.08em
+  color: t.$muted-2

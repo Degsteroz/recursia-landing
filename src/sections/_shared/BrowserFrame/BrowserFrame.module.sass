@@ -1,0 +1,71 @@
+@use "../../../styles/tokens" as t
+
+.frame
+  display: block
+  border-radius: 10px
+  overflow: hidden
+  border: 2px solid transparent
+  transition: transform 0.35s t.$ease
+
+.yellow
+  border-color: t.$yellow
+  background: t.$card
+
+  .chrome
+    background: t.$yellow
+    color: t.$ink
+
+  .dotFilled
+    background: t.$ink
+
+  .dot
+    border: 1.5px solid t.$ink
+
+.ink
+  border-color: t.$ink
+  background: #faf7f5
+
+  .chrome
+    background: t.$ink
+    color: t.$yellow
+
+  .dotFilled
+    background: t.$yellow
+
+  .dot
+    border: 1.5px solid t.$yellow
+
+.left:hover
+  transform: rotate(-1.2deg) scale(1.015)
+  opacity: 1
+
+.right:hover
+  transform: rotate(1.2deg) scale(1.015)
+  opacity: 1
+
+.shadow
+  box-shadow: 10px 10px 0 t.$ink
+  transition: all 0.3s t.$ease
+
+  &:hover
+    transform: translate(-4px, -4px)
+    box-shadow: 16px 16px 0 t.$ink
+    opacity: 1
+
+.chrome
+  display: flex
+  align-items: center
+  gap: 6px
+  padding: 9px 12px
+  @include t.mono
+  font-size: 11px
+
+.dotFilled,
+.dot
+  width: 9px
+  height: 9px
+  border-radius: 999px
+  flex: none
+
+.host
+  margin-left: 8px

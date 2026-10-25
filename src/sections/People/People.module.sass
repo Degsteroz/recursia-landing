@@ -1,0 +1,122 @@
+@use "../../styles/motion"
+@use "../../styles/tokens" as t
+
+.people
+  background: t.$yellow
+  padding: clamp(48px, 7vw, 100px) clamp(16px, 3.5vw, 40px)
+  border-top: 2px solid t.$ink
+  border-bottom: 2px solid t.$ink
+
+.wrap
+  @include t.wrap
+
+.grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr))
+  gap: clamp(16px, 2.5vw, 28px)
+  padding-top: clamp(28px, 4vw, 48px)
+
+.founder,
+.next
+  border-radius: 10px
+  padding: 22px
+  min-height: 300px
+  display: flex
+  flex-direction: column
+  gap: 22px
+
+.founder
+  border: 2px solid t.$ink
+  background: t.$ink
+  color: t.$paper
+  justify-content: space-between
+
+  a
+    display: inline-block
+    margin-top: 14px
+    @include t.mono
+    font-size: 12px
+    color: t.$yellow
+
+    &:hover
+      opacity: 1
+      color: t.$yellow
+
+.role
+  @include t.mono
+  font-size: 11px
+  letter-spacing: 0.08em
+  color: t.$yellow
+
+.name
+  margin-top: 8px
+  @include t.display
+  font-weight: 800
+  font-size: 26px
+
+.note
+  margin-top: 6px
+  font-size: 15px
+  color: t.$muted-2
+
+.next
+  border: 2px dashed t.$ink
+  justify-content: space-between
+
+.seat
+  width: 88px
+  height: 88px
+  border: 2px dashed t.$ink
+  border-radius: 999px
+  display: grid
+  place-items: center
+  @include t.display
+  font-weight: 800
+  font-size: 30px
+  animation: spin 14s linear infinite
+
+.kicker
+  @include t.mono
+  font-size: 11px
+  letter-spacing: 0.08em
+
+.soon
+  margin-top: 6px
+  font-size: 15px
+  max-width: 32ch
+
+.nest
+  border: 2px dashed t.$ink
+  border-radius: 10px
+  padding: 22px
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 300px
+  opacity: 0.55
+
+.frameA,
+.frameB,
+.frameC
+  border: 2px dashed t.$ink
+  display: flex
+  align-items: center
+  justify-content: center
+
+.frameA
+  border-radius: 8px
+  width: 70%
+  height: 70%
+  min-height: 180px
+
+.frameB
+  border-radius: 6px
+  width: 60%
+  height: 60%
+  min-height: 100px
+
+.frameC
+  border-radius: 4px
+  width: 50%
+  height: 50%
+  min-height: 50px

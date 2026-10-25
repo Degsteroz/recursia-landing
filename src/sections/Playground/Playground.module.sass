@@ -1,0 +1,81 @@
+@use "../../styles/tokens" as t
+
+.play
+  background: t.$yellow
+  padding: clamp(48px, 7vw, 104px) clamp(16px, 3.5vw, 40px)
+  border-top: 2px solid t.$ink
+  border-bottom: 2px solid t.$ink
+
+.wrap
+  @include t.wrap
+
+.grid,
+.notes
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr))
+  gap: clamp(20px, 3vw, 40px)
+
+.grid
+  padding-top: clamp(28px, 4vw, 52px)
+
+.card
+  border: 2px solid t.$ink
+  border-radius: 10px
+  overflow: hidden
+  background: t.$ink
+  transition: transform 0.35s t.$ease
+
+  &:hover
+    transform: rotate(0deg) scale(1.01)
+
+.left
+  transform: rotate(-1deg)
+
+.right
+  transform: rotate(1deg)
+
+.bar
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 10px
+  padding: 12px 16px
+  color: t.$yellow
+
+  a
+    @include t.mono
+    font-size: 12px
+    color: t.$yellow
+
+    &:hover
+      opacity: 1
+      color: t.$yellow
+
+.name
+  @include t.display
+  font-weight: 800
+  font-size: 18px
+
+.preview
+  position: relative
+  aspect-ratio: 4 / 3
+  overflow: hidden
+
+.light
+  background: #fff
+
+.dark
+  background: #111
+
+.shot
+  object-fit: cover
+  object-position: top center
+
+.notes
+  margin-top: 14px
+  font-size: 15px
+  line-height: 1.5
+
+  p
+    margin: 0
+    max-width: 46ch

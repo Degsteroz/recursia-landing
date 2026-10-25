@@ -1,0 +1,112 @@
+@use "../../styles/tokens" as t
+
+.work
+  background: t.$ink
+  color: t.$paper
+  padding: clamp(48px, 7vw, 104px) clamp(16px, 3.5vw, 40px)
+
+.wrap
+  @include t.wrap
+
+.row
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr))
+  gap: clamp(28px, 4vw, 56px)
+  align-items: center
+  padding: clamp(32px, 5vw, 64px) 0
+  border-bottom: 1px solid t.$line
+
+.rowLast
+  padding-bottom: 0
+  border-bottom: 0
+
+.flip
+  order: 2
+
+.preview
+  position: relative
+  aspect-ratio: 16 / 10
+  overflow: hidden
+
+.tedx
+  background: #000
+
+.roast
+  background: #0b0a11
+
+.shot
+  object-fit: cover
+  object-position: top center
+
+.kicker
+  display: flex
+  align-items: baseline
+  gap: 14px
+  @include t.mono
+  font-size: 12px
+  color: t.$yellow
+  letter-spacing: 0.06em
+
+.work
+  h3
+    margin: 12px 0 16px
+    @include t.display
+    font-weight: 800
+    font-size: clamp(28px, 3.6vw, 52px)
+    line-height: 1
+    letter-spacing: -0.02em
+
+  p
+    margin: 0 0 22px
+    max-width: 46ch
+    font-size: 17px
+    line-height: 1.55
+    color: t.$muted
+    text-wrap: pretty
+
+.link,
+.solid
+  display: inline-flex
+  padding: 11px 20px
+  border: 2px solid t.$yellow
+  border-radius: 999px
+  font-weight: 600
+  font-size: 14px
+  transition: all 0.2s
+
+.link
+  color: t.$yellow
+
+  &:hover
+    background: t.$yellow
+    color: t.$ink
+    opacity: 1
+
+.solid
+  background: t.$yellow
+  color: t.$ink
+
+  &:hover
+    transform: translateY(-3px)
+    opacity: 1
+    color: t.$ink
+
+.stage
+  display: flex
+  justify-content: center
+  padding: clamp(20px, 3vw, 40px)
+  border: 2px dashed #3a3a3c
+  border-radius: 10px
+  background: repeating-linear-gradient(135deg, #141415 0 10px, #0e0e0f 10px 20px)
+
+.phone
+  width: min(100%, 340px)
+  border: 3px solid t.$yellow
+  border-radius: 38px
+  background: #0f141d
+  padding: 10px
+  box-shadow: 12px 12px 0 t.$yellow
+  transition: transform 0.35s t.$ease
+
+  &:hover
+    transform: rotate(-2deg)
