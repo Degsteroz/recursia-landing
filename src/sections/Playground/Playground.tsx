@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SectionHeading } from "@/sections/_shared/SectionHeading/SectionHeading";
 import monster from "./assets/monster.png";
-import sadMusic from "./assets/sad-music.png";
+import sadMusic from "./assets/sad-music.jpg";
 import styles from "./Playground.module.sass";
 
 const CARDS = [
