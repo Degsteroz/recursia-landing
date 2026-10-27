@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { geist, geistMono, unbounded } from "@/styles/fonts";
 import "./globals.sass";
 
@@ -38,7 +39,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${unbounded.variable} ${geist.variable} ${geistMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          strategy="afterInteractive"
+          type="module"
+          data-cf-beacon='{"token": "35e2d7bb9dbf4aaab2bdf55c87de7be6"}'
+        />
+      </body>
     </html>
   );
 }
